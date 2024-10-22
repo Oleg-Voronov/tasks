@@ -1,0 +1,16 @@
+def get_matrix(n,m,value):
+    matrix_ = []
+    if n <= 0 or m <= 0: return matrix_
+    for i in range(0,n):
+        line_ = []
+        for j in range(0,m):
+            line_.append(value)
+        matrix_.append(line_)
+    return matrix_
+
+return_1 = get_matrix(2,2,5)
+return_2 = get_matrix(7,3,13)
+return_3 = get_matrix(3,5,21)
+print(return_1)
+print(return_2)
+print(return_3)
