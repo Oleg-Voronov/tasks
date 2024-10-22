@@ -1,0 +1,16 @@
+def result_ (n):
+    string_ =''
+    for i in range (1, n // 2 +1):
+        for j in range (2,n):
+            if n % (i+j) == 0 and not i == j:
+                string_ +=str(i)+str(j)
+    return string_
+
+#n = int (input('Введите число от 3 до 20: '))
+#if n >= 3 and n <= 20:
+#    print(f'А вот и наш парольчик : {result_(n)}')
+#else:
+#    print(';-( упс Условия не соблюдены')
+
+for n in range (3,21):
+    print(f'{n} - {result_(n)}')
