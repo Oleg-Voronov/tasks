@@ -13,15 +13,16 @@ def is_contains(str_ = '', list_to_searth = [] ):
     count_calls()
     str_ = str_.lower()
     for str_1 in list_to_searth:
-        str_1 = str_1.lower()
-    return str_ in list_to_searth
+        if str_ == str_1.lower():
+            return True
+    return False
 
 calls = 0
-print(string_info('QwertY'))
+print(string_info('qAwsEd'))
 print(is_contains('pups',['123','pups','wsdr']))
 print(string_info('Тест 2'))
 print(string_info('Третий тЭстик'))
-print(is_contains('pups',['123','pup3','wsdr']))
+print(is_contains('pups',['123','pup3','wsdr','pops']))
 print(is_contains('Ёж',['ёж','барсук','слон']))
 
 print(calls)
