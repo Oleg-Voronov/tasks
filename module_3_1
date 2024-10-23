@@ -1,0 +1,27 @@
+def count_calls():
+    global calls
+    calls = calls+1
+
+def string_info(str_ = ''):
+    count_calls()
+    len_=len(str_)
+    str_upper = str_.upper()
+    str_lower = str_.lower()
+    return (len_,str_upper,str_lower)
+
+def is_contains(str_ = '', list_to_searth = [] ):
+    count_calls()
+    str_ = str_.lower()
+    for str_1 in list_to_searth:
+        str_1 = str_1.lower()
+    return str_ in list_to_searth
+
+calls = 0
+print(string_info('QwertY'))
+print(is_contains('pups',['123','pups','wsdr']))
+print(string_info('Тест 2'))
+print(string_info('Третий тЭстик'))
+print(is_contains('pups',['123','pup3','wsdr']))
+print(is_contains('Ёж',['ёж','барсук','слон']))
+
+print(calls)
