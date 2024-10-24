@@ -1,0 +1,27 @@
+def address_chek (str_):
+    #"if '@' in str_  and (str_[-1:-5:-1] == 'moc.' or str_[-1:-5:-1] == 'ten.' or str_[-1:-4:-1] == 'ur.'):
+    if '@' in str_ and (str_[-4:-1]+str_[-1] == '.com' or str_[-4:-1]+str_[-1] == '.net' or str_[-3:-1]+str_[-1] == '.ru'):
+        return True
+    else:
+        return False
+
+def send_email(message, recipient, sender = 'university.help@gmail.com'):
+    if address_chek(recipient) and address_chek(sender):
+        if recipient == sender:
+            print('Невозможно отправить самому себе!!!')
+        elif sender == 'university.help@gmail.com' :
+            print(f'Письмо "{message}" успешно отправлено с адреса {sender} на адрес {recipient}.')
+        else:
+            print(f'НЕСТАНДАРТНЫЙ ОТПРАВИТЕЛЬ! Письмо "{message}" отправлено с адреса {sender} на адрес {recipient}')
+    else:
+        print(f'Невозможно отправить письмо "{message}" с адреса {sender} на адрес {recipient}')
+
+
+#send_email('Это сообщение для проверки связи', 'vasyok1337@gmail.com')
+#send_email('Вы видите это сообщение как лучший студент курса!', 'urban.fan@mail.ru', sender='urban.info@gmail.com')
+#send_email('Пожалуйста, исправьте задание', 'urban.student@mail.ru', sender='urban.teacher@mail.uk')
+#send_email('Напоминаю самому себе о вебинаре', 'urban.teacher@mail.ru', sender='urban.teacher@mail.ru')
+send_email('Привет, Человече','vollmih@mail.ru')
+send_email('Привет, Человече','vollmih@mail.ru','vollmihh@gmail.ru')
+send_email('Привет, Человече','vollmih@mail.r','vollmihh@gmail.ru')
+send_email('Привет, Человече','vollmih@mail.ru','vollmih@mail.ru')
