@@ -1,0 +1,15 @@
+def print_params(a = 11, b = 'строчка', c = True):
+    print(a,b,c)
+
+print_params()
+print_params(132,'Слово')
+print_params("asd",1234,False)
+print_params('то-то 1',[1,2,3],' кто-то тут')
+
+values_list = [327,'seven',True]
+values_dict = {'a':1,'b':11,'c':111}
+print_params(*values_list)
+print_params(**values_dict)
+
+values_list_2 = [123,"dog"]
+print_params(*values_list_2,'примерр')
