@@ -1,0 +1,15 @@
+def single_root_words(root_word, *other_words):
+    same_words = []
+    for str_ in other_words:
+        if str_.lower() in root_word.lower() or root_word.lower() in str_.lower():
+            same_words.append(str_)
+    return same_words
+
+#result1 = single_root_words('rich', 'richiest', 'orichalcum', 'cheers', 'richies')
+#result2 = single_root_words('Disablement', 'Able', 'Mable', 'Disable', 'Bagel')
+#print(result1)
+#print(result2)
+rez1 = single_root_words('вино','виноватый','виноград','невиновен','виньтик')
+rez2 = single_root_words('Мракобесие','пуля','Рак','бЕс','загадка')
+print(rez1)
+print(rez2)
