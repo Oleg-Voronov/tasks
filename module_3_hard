@@ -1,0 +1,54 @@
+def calculate_structure_sum(args):
+    if isinstance(args,int):
+        return args
+    elif isinstance(args,str):
+        if args.isnumeric():
+            return int(args)
+        else:
+            return len(args)
+    elif isinstance(args,list):
+        if args == []: return 0
+        res = calculate_structure_sum((args.pop(0)))
+        for i in args:
+            res = res + calculate_structure_sum(i)
+        return res
+    elif isinstance(args,tuple):
+        if args == (): return 0
+        res = calculate_structure_sum(args[0])
+        for i in range(1,len(args)):
+            res = res + calculate_structure_sum(args[i])
+        return res
+    elif isinstance(args,set):
+        if args == {}: return 0
+        res = calculate_structure_sum((args.pop()))
+        for i in args:
+            res = res + calculate_structure_sum(i)
+        return res
+    elif isinstance(args,dict):
+        if args == {}: return 0
+        list_1 = list(args.keys())
+        list_2 = list(args.values())
+        #print(type(list_1),list_1)
+        #print(type(list_2),list_2)
+        res = calculate_structure_sum(list_1)+calculate_structure_sum(list_2)
+        return res
+    else:
+        return 0
+
+
+
+data_structure = [
+[1, 2, 3],
+{'a': 4, 'b': 5},
+(6, {'cube': 7, 'drum': 8}),
+"Hello",
+((), [{(2, 'Urban', ('Urban2', 35))}])
+]
+
+result = calculate_structure_sum(data_structure)
+print(result)
+
+#print(calculate_structure_sum([1,'2',3,[1,(1,1),[1,1]]]))
+#print(calculate_structure_sum({1,2,3,10,'2',()}))
+print(calculate_structure_sum([{'pups': [3,3,3], 'glups': 4},[],'11',{},[1,(('2',[])),2,{1,2}]]))
+
